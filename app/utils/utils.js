@@ -1,4 +1,6 @@
 export const getBaseURL = () => {
+  console.error(window, "Window value");
+
   if (typeof window !== "undefined") {
     return window.location.origin;
   } else {
