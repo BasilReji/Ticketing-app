@@ -1,9 +1,11 @@
 import React from "react";
 import EditTicketForm from "../../components/EditTicketForm";
-
+const baseUrl = process.browser
+  ? window.location.origin
+  : "http://localhost:3000";
 const getTicketById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const res = await fetch(`${baseUrl}/api/Tickets/${id}`, {
       cache: "no-store",
     });
 
