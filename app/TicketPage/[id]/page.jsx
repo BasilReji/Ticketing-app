@@ -1,8 +1,8 @@
 import React from "react";
 import EditTicketForm from "../../components/EditTicketForm";
-const baseUrl = process.browser
-  ? window.location.origin
-  : "http://localhost:3000";
+import { getBaseURL } from "../../utils/utils";
+let baseUrl = getBaseURL();
+
 const getTicketById = async (id) => {
   try {
     const res = await fetch(`${baseUrl}/api/Tickets/${id}`, {

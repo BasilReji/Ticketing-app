@@ -1,8 +1,7 @@
 import React from "react";
 import TicketCard from "./components/TicketCard";
-const baseUrl = process.browser
-  ? window.location.origin
-  : "http://localhost:3000";
+import { getBaseURL } from "./utils/utils";
+let baseUrl = getBaseURL();
 
 const getTickets = async () => {
   try {
